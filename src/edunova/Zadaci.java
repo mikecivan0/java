@@ -60,5 +60,32 @@ public class Zadaci {
 				);
 		
 		System.out.println("Prva znamenka unešenog broja je " + (broj/10));
+		
+		//samostalni zadatak 1
+		//korisnik unosi cijenu jabuka
+		//nakon toga korisnik unosi kolièinu kupljenih jabuka
+		//program ispisuje iznos za naplatu podijeljen na kune i lipe
+		//lipe se zaokružuju na vrijednost bližu nuli
+		
+		float cijena, kolicina, iznos;
+		
+		cijena = Float.parseFloat(
+				JOptionPane.showInputDialog("Unesite cijenu kilograma jabuka.\nNpr. 4.45")
+				);
+		
+		kolicina = Float.parseFloat(
+				JOptionPane.showInputDialog("Unesite kolièinu.\nNpr. 1.564")
+				);
+		
+		iznos = cijena*kolicina;
+		
+		int iznosZaDijeljenjeNaKuneILipe = (int) (iznos*100);
+		int kuna = iznosZaDijeljenjeNaKuneILipe/100;
+		int lipa = iznosZaDijeljenjeNaKuneILipe%100;
+	
+		System.out.println("Iznos za naplatu " + kolicina + " kg jabuka\npo cijeni od " +
+						cijena + " kn/kg je\n" + kuna + " kuna i " + lipa + " lipa");
+
+
 	}
 }
