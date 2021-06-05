@@ -65,7 +65,7 @@ public class Zadaci {
 		
 		System.out.println("Prva znamenka unešenog broja je " + (broj/10));
 		
-		//samostalni zadatak 1
+		//samoinicijativni zadatak 1
 		//korisnik unosi cijenu jabuka
 		//nakon toga korisnik unosi kolièinu kupljenih jabuka
 		//program ispisuje iznos za naplatu podijeljen na kune i lipe
@@ -90,7 +90,7 @@ public class Zadaci {
 		System.out.println("Iznos za naplatu " + kolicina + " kg jabuka\npo cijeni od " +
 						cijena + " kn/kg je\n" + kuna + " kuna i " + lipa + " lipa");
 
-		//samostalni zadatak 2
+		//samoinicijativni zadatak 2
 		//od korisnika se traži da unese svoje ime
 		//program ga pozdravlja navodeæi upisano ime
 		//korisnik upisuje svoje godine
@@ -106,7 +106,7 @@ public class Zadaci {
 				" to je super doba života, "
 				+ "ali kada napuniš " + (godine+1) + " bit æe još bolje.\nPozdrav!");
 
-		// samostalni zadatak 2
+		// samoinicijativni zadatak 2
 		// korisnik upisuje broj
 		// program daje informaciju je li broj paran ili ne
 
@@ -116,7 +116,7 @@ public class Zadaci {
 		
 		JOptionPane.showInternalMessageDialog(null, poruka);
 
-		// samostalni zadatak 3
+		// samoinicijativni zadatak 3
 		// korisnik upisuje prvi a zatim i drugi broj
 		// korisnik upisuje želi li da se ta dva broja zbroje,
 		// oduzmu, podijele ili pomnože
@@ -154,5 +154,25 @@ public class Zadaci {
 		JOptionPane.showInternalMessageDialog(null, df.format(brojJedan3) + " " + operator 
 				+ " " + df.format(brojDva3) + " = " + df.format(rezultat));
 
+		
+		//samostalni zadatak 4
+		//korinik unosi dva broja
+		//aplikacija javlja koji broj je veæi ili jesu li brojevi jednaki
+		
+		String poruka4 = "Brojevi su jednaki";
+		
+		float brojJedan4 = Float.parseFloat(
+				JOptionPane.showInputDialog("Unesi prvi broj")
+				);
+		
+		float brojDva4 = Float.parseFloat(
+				JOptionPane.showInputDialog("Unesi drugi broj")
+				);
+		
+		if(brojJedan4 > brojDva4) poruka4 = "Prvi broj je veæi od drugoga";
+		if(brojJedan4 < brojDva4) poruka4 = "Drugi broj je veæi od prvoga";
+		
+		JOptionPane.showInternalMessageDialog(null, poruka4);
+		
 	}
 }
