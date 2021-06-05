@@ -1,5 +1,7 @@
 package edunova;
 
+import java.text.DecimalFormat;
+
 import javax.swing.JOptionPane;
 
 public class Zadaci {
@@ -10,6 +12,7 @@ public class Zadaci {
 		// vrijednost 36
 
 		int tjelesnaTemperatura = 36;
+		System.out.println(tjelesnaTemperatura);
 
 		// zadatak 2
 		// deklarirajte varijablu za temperaturu
@@ -17,6 +20,7 @@ public class Zadaci {
 		// vrijednost -9. Ispišite deklariranu vrijednost
 
 		int temperaturaMjesta = -9;
+		System.out.println(temperaturaMjesta);
 
 		// zadakat3
 		// Korisnik uèitava dva cijela broja
@@ -86,6 +90,69 @@ public class Zadaci {
 		System.out.println("Iznos za naplatu " + kolicina + " kg jabuka\npo cijeni od " +
 						cijena + " kn/kg je\n" + kuna + " kuna i " + lipa + " lipa");
 
+		//samostalni zadatak 2
+		//od korisnika se traži da unese svoje ime
+		//program ga pozdravlja navodeæi upisano ime
+		//korisnik upisuje svoje godine
+		//program mu daje odgovor
+		
+		String ime = JOptionPane.showInputDialog("Molim upiši svoje ime");
+		
+		int godine = Integer.parseInt(
+				JOptionPane.showInputDialog(ime + 
+						" je jako lijepo ime. A koliko godina imaš?")
+				);
+		JOptionPane.showInternalMessageDialog(null, "Kada osoba ima " + godine + 
+				" to je super doba života, "
+				+ "ali kada napuniš " + (godine+1) + " bit æe još bolje.\nPozdrav!");
+
+		// samostalni zadatak 2
+		// korisnik upisuje broj
+		// program daje informaciju je li broj paran ili ne
+
+		int broj2 = Integer.parseInt(JOptionPane.showInputDialog("Upiši broj"));
+
+		String poruka = (broj2 % 2 == 0) ? "Broj je paran" : "Broj je neparan";
+		
+		JOptionPane.showInternalMessageDialog(null, poruka);
+
+		// samostalni zadatak 3
+		// korisnik upisuje prvi a zatim i drugi broj
+		// korisnik upisuje želi li da se ta dva broja zbroje,
+		// oduzmu, podijele ili pomnože
+		// program daje rezultat		
+
+		float rezultat = 0;
+		float brojJedan3 = Float.parseFloat(JOptionPane.showInputDialog("Upiši prvi broj"));
+		float brojDva3 = Float.parseFloat(JOptionPane.showInputDialog("Upiši drugi broj"));
+
+		String operator = JOptionPane
+				.showInputDialog("Unesi +, -, * ili /, ovisno što " 
+								+ "želiš da se primjeni na ta dva broja");
+
+		switch (operator) {
+
+		case "+":
+			rezultat = brojJedan3 + brojDva3;
+			break;
+
+		case "-":
+			rezultat = brojJedan3 - brojDva3;
+			break;
+
+		case "*":
+			rezultat = brojJedan3 * brojDva3;
+			break;
+
+		case "/":
+			rezultat = (brojJedan3 / brojDva3);
+		}
+		
+		
+		DecimalFormat df = new DecimalFormat("0.####");
+		
+		JOptionPane.showInternalMessageDialog(null, df.format(brojJedan3) + " " + operator 
+				+ " " + df.format(brojDva3) + " = " + df.format(rezultat));
 
 	}
 }
