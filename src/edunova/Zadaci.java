@@ -94,7 +94,7 @@ public class Zadaci {
 		//od korisnika se traži da unese svoje ime
 		//program ga pozdravlja navodeæi upisano ime
 		//korisnik upisuje svoje godine
-		//program mu daje odgovor
+		//program mu izbacuje poruku
 		
 		String ime = JOptionPane.showInputDialog("Molim upiši svoje ime");
 		
@@ -174,5 +174,22 @@ public class Zadaci {
 		
 		JOptionPane.showInternalMessageDialog(null, poruka4);
 		
+		//samostalni zadatak 5
+		//korisnik unosi prvi broj
+		//korisnik unosi drugi broj
+		//program javlja je li prvi broj cjelobrojno djeljiv sa drugim brojem
+		
+		float prviBroj5 = Float.parseFloat(
+				JOptionPane.showInputDialog("Unesi prvi broj")
+				);
+		
+		float drugiBroj5 = Float.parseFloat(
+				JOptionPane.showInputDialog("Unesi drugi broj")
+				);
+		
+		String poruka5 = (prviBroj5 % drugiBroj5 == 0) ? "Prvi broj je cjelobrojno djeljiv sa drugim brojem bez ostatka" : 
+			"Prvi broj nije cjelobrojno djeljiv sa drugim bez ostatka";
+		
+		JOptionPane.showInternalMessageDialog(null, poruka5);
 	}
 }
