@@ -56,55 +56,45 @@ public class Zadaci {
 		// zadatak 5
 		// Korisnik unosi dvoznamenkasti broj
 		// Program ispisuje prvu znamenku
-		
-		int broj;
-		
-		broj = Integer.parseInt(
-				JOptionPane.showInputDialog("Unesite dvoznamenkasti broj")
-				);
-		
-		System.out.println("Prva znamenka unešenog broja je " + (broj/10));
-		
-		//samoinicijativni zadatak 1
-		//korisnik unosi cijenu jabuka
-		//nakon toga korisnik unosi kolièinu kupljenih jabuka
-		//program ispisuje iznos za naplatu podijeljen na kune i lipe
-		//lipe se zaokružuju na vrijednost bližu nuli
-		
-		float cijena, kolicina, iznos;
-		
-		cijena = Float.parseFloat(
-				JOptionPane.showInputDialog("Unesite cijenu kilograma jabuka.\nNpr. 4.45")
-				);
-		
-		kolicina = Float.parseFloat(
-				JOptionPane.showInputDialog("Unesite kolièinu.\nNpr. 1.564")
-				);
-		
-		iznos = cijena*kolicina;
-		
-		int iznosZaDijeljenjeNaKuneILipe = (int) (iznos*100);
-		int kuna = iznosZaDijeljenjeNaKuneILipe/100;
-		int lipa = iznosZaDijeljenjeNaKuneILipe%100;
-	
-		System.out.println("Iznos za naplatu " + kolicina + " kg jabuka\npo cijeni od " +
-						cijena + " kn/kg je\n" + kuna + " kuna i " + lipa + " lipa");
 
-		//samoinicijativni zadatak 2
-		//od korisnika se traži da unese svoje ime
-		//program ga pozdravlja navodeæi upisano ime
-		//korisnik upisuje svoje godine
-		//program mu izbacuje poruku
-		
+		int broj;
+
+		broj = Integer.parseInt(JOptionPane.showInputDialog("Unesite dvoznamenkasti broj"));
+
+		System.out.println("Prva znamenka unešenog broja je " + (broj / 10));
+
+		// samoinicijativni zadatak 1
+		// korisnik unosi cijenu jabuka
+		// nakon toga korisnik unosi kolièinu kupljenih jabuka
+		// program ispisuje iznos za naplatu podijeljen na kune i lipe
+		// lipe se zaokružuju na vrijednost bližu nuli
+
+		float cijena, kolicina, iznos;
+
+		cijena = Float.parseFloat(JOptionPane.showInputDialog("Unesite cijenu kilograma jabuka.\nNpr. 4.45"));
+
+		kolicina = Float.parseFloat(JOptionPane.showInputDialog("Unesite kolièinu.\nNpr. 1.564"));
+
+		iznos = cijena * kolicina;
+
+		int iznosZaDijeljenjeNaKuneILipe = (int) (iznos * 100);
+		int kuna = iznosZaDijeljenjeNaKuneILipe / 100;
+		int lipa = iznosZaDijeljenjeNaKuneILipe % 100;
+
+		System.out.println("Iznos za naplatu " + kolicina + " kg jabuka\npo cijeni od " + cijena + " kn/kg je\n" + kuna
+				+ " kuna i " + lipa + " lipa");
+
+		// samoinicijativni zadatak 2
+		// od korisnika se traži da unese svoje ime
+		// program ga pozdravlja navodeæi upisano ime
+		// korisnik upisuje svoje godine
+		// program mu izbacuje poruku
+
 		String ime = JOptionPane.showInputDialog("Molim upiši svoje ime");
-		
-		int godine = Integer.parseInt(
-				JOptionPane.showInputDialog(ime + 
-						" je jako lijepo ime. A koliko godina imaš?")
-				);
-		JOptionPane.showInternalMessageDialog(null, "Kada osoba ima " + godine + 
-				" to je super doba života, "
-				+ "ali kada napuniš " + (godine+1) + " bit æe još bolje.\nPozdrav!");
+
+		int godine = Integer.parseInt(JOptionPane.showInputDialog(ime + " je jako lijepo ime. A koliko godina imaš?"));
+		JOptionPane.showInternalMessageDialog(null, "Kada osoba ima " + godine + " to je super doba života, "
+				+ "ali kada napuniš " + (godine + 1) + " bit æe još bolje.\nPozdrav!");
 
 		// samoinicijativni zadatak 2
 		// korisnik upisuje broj
@@ -113,22 +103,21 @@ public class Zadaci {
 		int broj2 = Integer.parseInt(JOptionPane.showInputDialog("Upiši broj"));
 
 		String poruka = (broj2 % 2 == 0) ? "Broj je paran" : "Broj je neparan";
-		
+
 		JOptionPane.showInternalMessageDialog(null, poruka);
 
 		// samoinicijativni zadatak 3
 		// korisnik upisuje prvi a zatim i drugi broj
 		// korisnik upisuje želi li da se ta dva broja zbroje,
 		// oduzmu, podijele ili pomnože
-		// program daje rezultat		
+		// program daje rezultat
 
 		float rezultat = 0;
 		float brojJedan3 = Float.parseFloat(JOptionPane.showInputDialog("Upiši prvi broj"));
 		float brojDva3 = Float.parseFloat(JOptionPane.showInputDialog("Upiši drugi broj"));
 
 		String operator = JOptionPane
-				.showInputDialog("Unesi +, -, * ili /, ovisno što " 
-								+ "želiš da se primjeni na ta dva broja");
+				.showInputDialog("Unesi +, -, * ili /, ovisno što " + "želiš da se primjeni na ta dva broja");
 
 		switch (operator) {
 
@@ -147,49 +136,51 @@ public class Zadaci {
 		case "/":
 			rezultat = (brojJedan3 / brojDva3);
 		}
-		
-		
-		DecimalFormat df = new DecimalFormat("0.####");
-		
-		JOptionPane.showInternalMessageDialog(null, df.format(brojJedan3) + " " + operator 
-				+ " " + df.format(brojDva3) + " = " + df.format(rezultat));
 
-		
-		//samostalni zadatak 4
-		//korinik unosi dva broja
-		//aplikacija javlja koji broj je veæi ili jesu li brojevi jednaki
-		
+		DecimalFormat df = new DecimalFormat("0.####");
+
+		JOptionPane.showInternalMessageDialog(null,
+				df.format(brojJedan3) + " " + operator + " " + df.format(brojDva3) + " = " + df.format(rezultat));
+
+		// samoinicijativni zadatak 4
+		// korinik unosi dva broja
+		// aplikacija javlja koji broj je veæi ili jesu li brojevi jednaki
+
 		String poruka4 = "Brojevi su jednaki";
-		
-		float brojJedan4 = Float.parseFloat(
-				JOptionPane.showInputDialog("Unesi prvi broj")
-				);
-		
-		float brojDva4 = Float.parseFloat(
-				JOptionPane.showInputDialog("Unesi drugi broj")
-				);
-		
-		if(brojJedan4 > brojDva4) poruka4 = "Prvi broj je veæi od drugoga";
-		if(brojJedan4 < brojDva4) poruka4 = "Drugi broj je veæi od prvoga";
-		
+
+		float brojJedan4 = Float.parseFloat(JOptionPane.showInputDialog("Unesi prvi broj"));
+
+		float brojDva4 = Float.parseFloat(JOptionPane.showInputDialog("Unesi drugi broj"));
+
+		if (brojJedan4 > brojDva4)
+			poruka4 = "Prvi broj je veæi od drugoga";
+		if (brojJedan4 < brojDva4)
+			poruka4 = "Drugi broj je veæi od prvoga";
+
 		JOptionPane.showInternalMessageDialog(null, poruka4);
-		
-		//samostalni zadatak 5
-		//korisnik unosi prvi broj
-		//korisnik unosi drugi broj
-		//program javlja je li prvi broj cjelobrojno djeljiv sa drugim brojem
-		
-		float prviBroj5 = Float.parseFloat(
-				JOptionPane.showInputDialog("Unesi prvi broj")
-				);
-		
-		float drugiBroj5 = Float.parseFloat(
-				JOptionPane.showInputDialog("Unesi drugi broj")
-				);
-		
-		String poruka5 = (prviBroj5 % drugiBroj5 == 0) ? "Prvi broj je cjelobrojno djeljiv sa drugim brojem bez ostatka" : 
-			"Prvi broj nije cjelobrojno djeljiv sa drugim bez ostatka";
-		
+
+		// samoinicijativni zadatak 5
+		// korisnik unosi prvi broj
+		// korisnik unosi drugi broj
+		// program javlja je li prvi broj cjelobrojno djeljiv sa drugim brojem
+
+		float prviBroj5 = Float.parseFloat(JOptionPane.showInputDialog("Unesi prvi broj"));
+
+		float drugiBroj5 = Float.parseFloat(JOptionPane.showInputDialog("Unesi drugi broj"));
+
+		String poruka5 = (prviBroj5 % drugiBroj5 == 0) ? "Prvi broj je cjelobrojno djeljiv sa drugim brojem bez ostatka"
+				: "Prvi broj nije cjelobrojno djeljiv sa drugim bez ostatka";
+
 		JOptionPane.showInternalMessageDialog(null, poruka5);
+
+		// samoinicijativni zadatak 6
+		// korisnik unosi tekst
+		// program javlja koja je dužina unešenog teksta
+
+		String tekst = JOptionPane.showInputDialog("Unesi tekst");
+
+		JOptionPane.showInternalMessageDialog(null, "Dužina unešenog teksta je " + tekst.length());
+		
+		
 	}
 }
