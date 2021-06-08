@@ -185,7 +185,7 @@ public class Zadaci {
 		// korisnik unosi tri cijela broja virijednosti iznad 0
 		// aplikacija ispisuje srednju vrijednost ta tri broja
 		// onoliko puta koliko iznosi najmanji upisani broj
-		// onda se decimale ne prikazuju
+		// ukoliko je srednja vrijednost cijeli broj onda se decimale ne prikazuju
 
 		int prviBroj6, drugiBroj6, treciBroj6, i6, najmanjiBroj6;
 		float srednjaVrijednost6;
