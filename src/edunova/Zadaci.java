@@ -1,7 +1,6 @@
 package edunova;
 
 import java.text.DecimalFormat;
-
 import javax.swing.JOptionPane;
 
 public class Zadaci {
@@ -181,6 +180,64 @@ public class Zadaci {
 
 		JOptionPane.showInternalMessageDialog(null, "Dužina unešenog teksta je " + tekst.length());
 		
-		
+
+		// samoinicijativni zadatak 7
+		// korisnik unosi tri cijela broja virijednosti iznad 0
+		// aplikacija ispisuje srednju vrijednost ta tri broja
+		// onoliko puta koliko iznosi najmanji upisani broj
+		// onda se decimale ne prikazuju
+
+		int prviBroj6, drugiBroj6, treciBroj6, i6, najmanjiBroj6;
+		float srednjaVrijednost6;
+
+		prviBroj6 = Integer.parseInt(JOptionPane.showInputDialog("Unesi prvi broj"));
+
+		drugiBroj6 = Integer.parseInt(JOptionPane.showInputDialog("Unesi drugi broj"));
+
+		treciBroj6 = Integer.parseInt(JOptionPane.showInputDialog("Unesi treæi broj"));
+
+		// provjera jesu li svi brojevi veæi od 0
+		if (prviBroj6 < 0 || drugiBroj6 < 0 || treciBroj6 < 0) {
+
+			System.out.println("Svi brojevi moraju biti iznad 0");
+
+		} else {
+
+			// traženje najmanjeg broja
+			if (prviBroj6 <= drugiBroj6 && prviBroj6 <= treciBroj6) {
+				najmanjiBroj6 = prviBroj6;
+			} else if (drugiBroj6 <= prviBroj6 && drugiBroj6 <= treciBroj6) {
+				najmanjiBroj6 = drugiBroj6;
+			} else {
+				najmanjiBroj6 = treciBroj6;
+			}
+
+			// raèunanje srednje vrijednosti
+			srednjaVrijednost6 = (float) (prviBroj6 + drugiBroj6 + treciBroj6) / 3;
+
+			// ispis solucije kako bi se lakše pratio rad programa
+			System.out.println("Upisani brojevi su: " + prviBroj6 + ", " + drugiBroj6 + " i " + treciBroj6);
+			System.out.println("Srednja vrijednost je " + srednjaVrijednost6);
+			System.out.println("Vrijednost æe se ispisati " + najmanjiBroj6 + " puta");
+
+			// oduzimanje .0 ako je srednja vrijednost cijeli broj
+			// i ispis rezultata
+			if (srednjaVrijednost6 % 1 == 0) {
+
+				int srednjaVrijednostInt6 = (int) srednjaVrijednost6;
+
+				for (i6 = 0; i6 < najmanjiBroj6; i6++) {
+					System.out.println((i6 + 1) + ". " + srednjaVrijednostInt6);
+				}
+
+			} else {
+				
+				for (i6 = 0; i6 < najmanjiBroj6; i6++) {
+					System.out.println((i6 + 1) + ". " + srednjaVrijednost6);
+				}
+			}
+
+		}
+
 	}
 }
