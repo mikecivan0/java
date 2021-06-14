@@ -316,6 +316,122 @@ public class Zadaci {
 			}
 
 		}
+		
+		//zadatak 9
+		//korisnik unosi 5 brojeva koji se spremaju u niz
+		//prikazuje se prvi i zadji uneseni broj
+		int[] niz = new int[5];
+		
+		niz[0] = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi prvi broj"));
+		niz[1] = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi drugi broj"));
+		niz[2] = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi treæi broj"));
+		niz[3] = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi èetvrti broj"));
+		niz[4] = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi peti broj"));
+		
+		System.out.println("Prvi broj je " + niz[0] + " a zanji je " + niz[4]);
+		
+		//zadatak 10
+		//korisnik unosi broj i toliko puta se ispisuje broj 7
+		int broj10 = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi broj"));
+		
+		for(int i=0; i<broj10; i++) {
+			System.out.println(7);
+		}
+		
+		//zadatak 11
+		//program ispisuje sve parne brojeve od 1 do 55
+		for(int i=1; i<=55; i++) {
+			if(i%2==0) {
+				System.out.println(i);
+			}
+		}
+		
+		//zadatak 12
+		//zbrojiti prvih 100 brojeva
+		
+		int zbroj12 = 0;
+		for(int i = 1; i<=100; i++) {
+			zbroj12+=i;
+		}
+		System.out.println(zbroj12);
 
+		//zadatak 13
+		//tablica množenja do 10
+		String broj13ZaPrikaz;
+		int umnozak;
+		for(int i = 1; i<=10; i++) {
+			for(int j = 1; j<=10; j++) {
+				umnozak = i*j;
+				if(umnozak<10) {
+					broj13ZaPrikaz = " " + String.valueOf(umnozak);
+				}else {
+					broj13ZaPrikaz = String.valueOf(umnozak);
+				}
+				System.out.print(broj13ZaPrikaz + " ");
+			}
+			
+			System.out.println();
+		}
+		
+		//zadatak 14
+		// korisnik unosi 5 cijelih brojeva u niz
+				// program ispisuje najveæi broj
+				int[] niz14 = new int[5];
+				int tmp, duzinaNiza14 = niz14.length;
+
+				for (int i = 0; i < duzinaNiza14; i++) {
+					int brojZaPrikaz14 = i + 1; //da se ne bi prikazivala nula
+					niz14[i] = Integer.parseInt(JOptionPane.showInputDialog("Unesi " + brojZaPrikaz14 + ". broj"));
+				}
+
+				for (int i = 0; i < duzinaNiza14; i++) {
+					for (int j = i + 1; j < duzinaNiza14; j++) {
+						if (niz14[i] > niz14[j]) { //guranje najveæeg broja na kraj niza
+							tmp = niz14[i];
+							niz14[i] = niz14[j];
+							niz14[j] = tmp;
+						}
+					}
+				}
+				System.out.println("Najveæi broj je " + niz14[duzinaNiza14 - 1]);
+
+		//zadatak 15
+		//increment - decrement zadatak 1
+		int a15 = 10;
+		int b15 = ++a15; //a=11 b=11
+		a15 = 5 * b15--; //a=55 b=11(-1)
+		b15 = --b15 + a15++; //a=56 b=64
+		System.out.println(--a15 + ++b15); //a=55 b=65 rezultat 120 
+		
+		//zadatak 16
+		//increment - decrement zadatak 2
+		int a16 = 5; 
+		int b16 = 2 + a16++; //a=5(+1) b=7
+		a16 = b16-- + ++a16; //a=14 b=7(-1)
+		b16 = --b16 + 2 - --a16; //a=13 b=-6
+		System.out.println(b16++ - --a16 * 2); //a=12 b=-6(+1) rezultat -30
+		
+		//zadatak 17
+		//increment - decrement zadatak 3
+		int a17 = 12;
+		int b17 = 8 + a17++; //a=12(+1) b=20
+		b17 = 5 - ++a17; //a=14 b=-9
+		b17 = b17-- + 2*b17-- - a17; //a=14 b=-41(-2)
+		System.out.println(--a17 - ++b17); //a=13 b=-42 rezultat 55
+		
+		//zadatak 18
+		//increment - decrement zadatak 3
+		int a18 = 4;
+		int b18 = 9 / --a18; //a=3 b=3
+		a18 += b18++; //a=6 b=3(+1)
+		b18 = --b18 + a18++; //a=6(+1) b=9
+		System.out.println(++a18 - b18++); //a=8 b=9(+1) rezultat -1		
+		
 	}
 }
