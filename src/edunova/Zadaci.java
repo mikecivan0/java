@@ -238,6 +238,84 @@ public class Zadaci {
 			}
 
 		}
+		
+		// zadatak 8
+		// 10 igraèa igra igru i igra kreæe od prvoga prema desetome i tako u krug
+		// svaki redom izgovara po jedan broj poèevši od 1 pa sve do 100
+		// ako se izgovori broj koji je cjelobrojno djeljiv sa 7 smjer igre se mijenja
+		// ako se izgovori broj koji je cjelobrojno djeljiv sa 13 preskaèe se iduæi
+		// igraè
+		// ispisati koji igraè izgovara koji broj
+
+		int igrac = 1, igracZaPrikazKodPreskakanja = 1, broj7;
+		boolean smjerIgre = true; // true = igrac++, false = igrac--
+
+		for (broj7 = 1; broj7 <= 100; broj7++) {
+
+			// obrni smjer igre ako je izgovoreni broj cjelobrojno djeljiv sa 7
+			if (broj7 % 7 == 0) {
+
+				smjerIgre = (smjerIgre) ? false : true;
+
+			}
+
+			// ukoliko se premaši broj 10 postavi igraèa na onu poziciju
+			// za koliko je broj 10 premašen
+			// kako bise postigla igra u krug
+			if (igrac > 10) {
+
+				igrac -= 10;
+
+				// ukoliko je broj trenutnog igraèa manji od 1 postavi igraèa na onu poziciju
+				// koja je razlika izmeðu trenutnog broja igraèa i 10
+				// kako bi se postigla igra u krug
+			} else if (igrac <= 0) {
+
+				igrac += 10;
+
+			}
+
+			// ispis tko što izgovara
+			System.out.println("Igraè " + igrac + " izgovara broj " + broj7);
+
+			// prikaz poruke u sluèaju promjene smjera radi boljeg praæenja
+			if (broj7 % 7 == 0) {
+
+				System.out.println("\nMijenja se smjer igre\n");
+
+				// prikaz poruke u sluèaju da se preskaèe iduæi igraè
+			} else if (broj7 % 13 == 0) {
+
+				// preskakanje igraèa
+				if (smjerIgre) {
+					igrac++;
+				} else {
+					igrac--;
+				}
+
+				// postavljanje broja igraèa za prikaz, jer se u suprotnom prikazuju i 0 i 10
+				if (igrac > 10) {
+
+					igracZaPrikazKodPreskakanja = igrac - 10;
+
+				} else if (igrac <= 0) {
+
+					igracZaPrikazKodPreskakanja = igrac + 10;
+
+				}
+
+				System.out.println("\nPreskaèe se igraè broj " + igracZaPrikazKodPreskakanja + "\n");
+
+			}
+
+			// inkremencija ili dekremencija na iduæeg igraèa
+			if (smjerIgre) {
+				igrac++;
+			} else {
+				igrac--;
+			}
+
+		}
 
 	}
 }
