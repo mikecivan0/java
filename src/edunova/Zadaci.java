@@ -431,7 +431,44 @@ public class Zadaci {
 		int b18 = 9 / --a18; //a=3 b=3
 		a18 += b18++; //a=6 b=3(+1)
 		b18 = --b18 + a18++; //a=6(+1) b=9
-		System.out.println(++a18 - b18++); //a=8 b=9(+1) rezultat -1		
+		System.out.println(++a18 - b18++); //a=8 b=9(+1) rezultat -1	
 		
+		//zadatak 19
+		//increment - decrement zadatak 4
+		int a19 = 0;
+		int b19 = 1;
+		a19 = a19++ + ++a19; //a=1(+1) b=1
+		b19 = b19 + a19++ + ++b19; //a=2(+1) b=4(+1)
+		a19 += --a19 + --b19; //a=9 b=4
+		System.out.println(++a19 * b19--); //a=10 b=4(-1) rezultat 40
+		
+		//zadatak 20
+		//increment - decrement zadatak 5
+		int a20 = 1;
+		int b20 = 2;		
+		b20 = b20-- - --a20 + ++b20 - b20++; //a=0 b=2
+		a20 += b20++ + b20 - a20-- + 2*b20; //a=11 b=3
+		System.out.println(a20-- + b20++); //a=11 b=3 rezultat 14
+		
+		//zadatak 21
+		//increment - decrement zadatak 6
+		int a21 = 1;
+		int b21 = 2; 
+		int c21 = 3;
+		a21 = a21-- + ++b21 + --c21; //a=6 b=3 c=2
+		b21 = ++a21 - b21++ + c21++; //a=7 b=6 c=2(+1)
+		c21 = a21++ + ++b21 + c21++; //a=7(+1) b=7 c=17
+		
+		System.out.println(++a21 - --b21 - c21++); //a=9 b=6 c=17 rezultat -14
+		
+		//zadatak 22
+		//increment - decrement zadatak 7
+		int a22 = 0;
+		int b22 = 1; 
+		int c22 = 2;
+		a22 = a22++ + ++a22 * --a22 - a22--; //a=1 b=1 c=2
+		b22 = --b22 - ++a22 + ++b22 - --a22; //a=1 b=-2 c=2
+		c22 = a22 + b22 + a22++ + b22++ + ++a22 + ++b22; //a=2(+1) b=-1(+1) c=1
+		System.out.println(a22++ + ++b22 * c22--); // a=3 b=1 c=1 rezultat 4
 	}
 }
