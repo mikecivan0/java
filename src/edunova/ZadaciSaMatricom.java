@@ -285,7 +285,7 @@ public class ZadaciSaMatricom {
 		int srednjiRed10 = b-(b/2);
 		
 		System.out.println(
-				"Ispod je matrica 9x9 sa svim elementima vrijednosti 0\n" 
+				"Ispod je matrica 9x9 sa križem u sredini\n" 
 				+ "osim onih koji èine križ u sredini matrice\n"
 				+ "a èija je vrijednost 1\n"
 			);
@@ -314,9 +314,7 @@ public class ZadaciSaMatricom {
 		int srednjiRed11 = b-(b/2);
 		
 		System.out.println(
-				"Ispod je matrica 9x9 sa zvijezdom u sredini\n" 
-				+ "elementi matrice koji ne èine zvijezdu\n"
-				+ "imaju vrijednost 0\n"
+				"Ispod je matrica 9x9 sa zvijezdom u sredini\n"
 			);
 		
 		for (int i = 1; i <= a; i++) {
@@ -330,13 +328,57 @@ public class ZadaciSaMatricom {
 				}else if(i + (j-1) == b) {
 					System.out.print("/ ");
 				}else {
-					System.out.print(0 + " ");
+					System.out.print("  ");
 				}
 
 			}
 			System.out.println();
 		}	
 		System.out.println();
+		
+		
+		
+		// zadatak 12
+		// ispis vrijednosti 1 i 0 naizmjence u matrici
+				
+		System.out.println(
+				"Ispod je matrica 9x9\n"
+				+ "sa naizmjence ispisanim jedinicama i nulama\n"
+			);
+			
+		for (int i = 1; i <= a; i++) {
+			for (int j = 1; j <= b; j++) {
+				if((i+j)%2==0) {
+					System.out.print(1 + " ");
+				}else {
+					System.out.print(0 + " ");
+				}
+			}
+			System.out.println();
+		}	
+		System.out.println();		
+		
+		
+		// zadatak 12
+		// ispis matrice sa kariranim uzorkom
+						
+		System.out.println(
+				"Ispod je matrica 9x9\n"
+				+ "sa kariranim uzorkom\n"
+			);
+				
+		for (int i = 1; i <= a; i++) {
+			for (int j = 1; j <= b; j++) {
+				if(i%2!=0 || (i%2==0 && j%2!=0)) {
+					System.out.print(1 + " ");
+				}else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}	
+		System.out.println();
+		
 
 	}
 
