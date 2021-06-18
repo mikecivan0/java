@@ -381,25 +381,25 @@ public class Zadaci {
 		
 		//zadatak 14
 		// korisnik unosi 5 cijelih brojeva u niz
-				// program ispisuje najveæi broj
-				int[] niz14 = new int[5];
-				int tmp, duzinaNiza14 = niz14.length;
+		// program ispisuje najveæi broj
+		int[] niz14 = new int[5];
+		int tmp, duzinaNiza14 = niz14.length;
 
-				for (int i = 0; i < duzinaNiza14; i++) {
-					int brojZaPrikaz14 = i + 1; //da se ne bi prikazivala nula
-					niz14[i] = Integer.parseInt(JOptionPane.showInputDialog("Unesi " + brojZaPrikaz14 + ". broj"));
-				}
+		for (int i = 0; i < duzinaNiza14; i++) {
+			int brojZaPrikaz14 = i + 1; //da se ne bi prikazivala nula
+			niz14[i] = Integer.parseInt(JOptionPane.showInputDialog("Unesi " + brojZaPrikaz14 + ". broj"));
+		}
 
-				for (int i = 0; i < duzinaNiza14; i++) {
-					for (int j = i + 1; j < duzinaNiza14; j++) {
-						if (niz14[i] > niz14[j]) { //guranje najveæeg broja na kraj niza
-							tmp = niz14[i];
-							niz14[i] = niz14[j];
-							niz14[j] = tmp;
-						}
-					}
+		for (int i = 0; i < duzinaNiza14; i++) {
+			for (int j = i + 1; j < duzinaNiza14; j++) {
+				if (niz14[i] > niz14[j]) { //guranje najveæeg broja na kraj niza
+					tmp = niz14[i];
+					niz14[i] = niz14[j];
+					niz14[j] = tmp;
 				}
-				System.out.println("Najveæi broj je " + niz14[duzinaNiza14 - 1]);
+			}
+		}
+		System.out.println("Najveæi broj je " + niz14[duzinaNiza14 - 1]);
 
 		//zadatak 15
 		//increment - decrement zadatak 1

@@ -60,6 +60,124 @@ public class ArrayZadaci {
 			}else {
 				JOptionPane.showInternalMessageDialog(null, "Ispucao si sve pokušaje. Vidimo se opet drugi puta!");
 			}
-		
+ 		
+			
+			// zadatak 2
+			// korisnik unosi dva cijela broja koji æe definirati velièinu matrice
+			// korisnik unosi vijednost za svaki element matrice
+			// a èija je janveæa dopuštena vrijednost 9999
+ 			// matrica se ispisuje
+			
+			int x, y;
+			
+			JOptionPane.showInternalMessageDialog(null, "Ovaj program ispisuje matricu.\n"
+					+ "Trebaš upisati koliko æe redova imati matrica,\n"
+					+ "i koliko æe elemenata biti u svakome redu.\n"
+					+ "Za svaki element æeš trebati unijeti vrijednost manju od 10000");
+			
+			for(;;) {
+				x = Integer.parseInt(
+						JOptionPane.showInputDialog("Koliko redova æe imati matrica?")
+					);
+				if(x>0) {
+					break;
+				}
+				
+				JOptionPane.showInternalMessageDialog(null, "Unesi broj veæi o 0 za definiranje broja redova");
+			}
+			
+			
+			for(;;) {
+				y = Integer.parseInt(
+						JOptionPane.showInputDialog("Koliko elemenata æe biti u svakom redu?")
+					);
+				if(y>0) {
+					break;
+				}
+				
+				JOptionPane.showInternalMessageDialog(null, "Unesi broj veæi o 0 za definiranje broja elemenata u redu");
+			}
+			
+			int niz[][] = new int[x][y];
+			
+			for(int i=0;i<x;i++) {
+				for(int j=0;j<y;j++) {
+					for(;;) {
+						niz[i][j] = Integer.parseInt(
+								JOptionPane.showInputDialog("Unesi vrijednost za " + (j+1) + ". element u " + (i+1) + ". redu.\n"
+										+ "Najveæa dopuštena vriejdnost je 9999")
+							);
+						
+						if(niz[i][j]<=9999) {
+							break;
+						}
+						
+						JOptionPane.showInternalMessageDialog(null, "Unesi broj manji od 10000");
+					}
+					
+				}
+			}
+			
+			for(int i=0;i<x;i++) {
+				for(int j=0;j<y;j++) {
+					if(niz[i][j]<10000 && niz[i][j]>999) {
+						System.out.print(niz[i][j] + " ");
+					}else if(niz[i][j]<1000 && niz[i][j]>99){
+						System.out.print(niz[i][j] + "  ");
+					}else if(niz[i][j]<100 && niz[i][j]>9){
+						System.out.print(niz[i][j] + "   ");
+					}else{
+						System.out.print(niz[i][j] + "    ");
+					}					
+				}
+				System.out.println();
+			}
+			
+			
+			
+			// korisnik unosi 10 brojeva koji se spremaju u niz
+			// korisnik zatim unosi 1 ako želi ispis neparnih brojeva
+			// ili unosi 2 ako želi ispis parnih brojeva
+			
+			int niz2[] = new int[10];
+			int filter = 1;
+			
+			for(int i=0;i<niz2.length;i++) {
+				niz2[i] = Integer.parseInt(
+						JOptionPane.showInputDialog("Unesi " + (i+1) + ". broj")
+						);
+			}
+			
+			for(;;) {
+				
+				filter = Integer.parseInt(
+						JOptionPane.showInputDialog("Unesi 1 za prikaz unešenih neparnih brojeva, ili 2 za prikaz unešenih parnih brojeva")
+						);
+				
+				
+				if(filter==1 || filter==2) {
+					break;
+				}
+				
+				JOptionPane.showInternalMessageDialog(null, "Nevaljani unos");
+			}
+			
+			if(filter==1) {
+				System.out.println("Unešeni neparni brojevi su");
+				for(int i=0;i<niz2.length;i++) {
+					if(niz2[i]%2!=0) {
+						System.out.print(niz2[i] + " ");
+					}
+				}
+			}else if(filter==2) {
+				System.out.println("Unešeni parni brojevi su");
+				for(int i=0;i<niz2.length;i++) {
+					if(niz2[i]%2==0) {
+						System.out.print(niz2[i] + " ");
+					}
+				}
+			}
+			
+			
 	}
 }
