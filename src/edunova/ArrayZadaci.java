@@ -60,7 +60,9 @@ public class ArrayZadaci {
 			}else {
 				JOptionPane.showInternalMessageDialog(null, "Ispucao si sve pokušaje. Vidimo se opet drugi puta!");
 			}
- 		
+			
+			
+			
 			
 			// zadatak 2
 			// korisnik unosi dva cijela broja koji æe definirati velièinu matrice
@@ -135,6 +137,8 @@ public class ArrayZadaci {
 			
 			
 			
+			
+			// zadatak 3
 			// korisnik unosi 10 brojeva koji se spremaju u niz
 			// korisnik zatim unosi 1 ako želi ispis neparnih brojeva
 			// ili unosi 2 ako želi ispis parnih brojeva
@@ -177,6 +181,99 @@ public class ArrayZadaci {
 					}
 				}
 			}
+			
+			
+			
+			
+			// zadatak 4
+			// korisnik unosom broja 1 do 10 definira dužinu niza
+			// korisnik unosi vrijednost svakog elementa niza
+			// korisnik unosi 1 ili 2 ovisno o tome želi li
+			// ispisati niz sortiran uzlazno ili silazno
+			// program sortira vrijednosti niza ulazno 
+			// program ispisuje sortirani niz
+			
+			int velicinaNiza, sort, temp;
+			
+			JOptionPane.showInternalMessageDialog(null, "Pozdrav!\n"
+					+ "Prvo æeš trebati unijeti broj izmeði 1 i 10. Zatim æeš\n"
+					+ "toliko puta, koliki je broj upisan, trebati upisati neki broj.\n"
+					+ "Zatim æeš trebati upisati broj 1 ili 2 ovisno o tome\n"
+					+ "želiš li da se upisani brojevi sortiraju ulazno ili silazno.\n"
+					+ "Program æe sortirati i ispisati upisane brojeve");
+			
+			
+			for(;;) {
+				velicinaNiza = Integer.parseInt(
+						JOptionPane.showInputDialog("Unesi broj izmeðu 1 i 10")
+						);
+				
+				if(velicinaNiza>=1 && velicinaNiza<=10) {
+					break;
+				}
+				
+				JOptionPane.showInternalMessageDialog(null, "Broj mora biti izmeðu 1 i 10, ukljuèujuæi 1 i 10");
+				
+			}
+			
+			
+			int izvorniNiz[] = new int[velicinaNiza];
+			int nizZaPrikaz[] = new int[velicinaNiza];
+			
+			for(int i=0;i<velicinaNiza;i++) {
+				izvorniNiz[i] = Integer.parseInt(
+						JOptionPane.showInputDialog("Unesi " + (i+1) + ". broj")
+						);
+			}
+			
+			for(;;) {
+				sort = Integer.parseInt(
+						JOptionPane.showInputDialog("Unesi 1 za uzlazno sortiranje, ili 2 za silazno sortiranje")
+						);
+				
+				if(sort==1 || sort==2) {
+					break;
+				}
+				
+				JOptionPane.showInternalMessageDialog(null, "Upiši 1 ili 2");
+				
+			}
+			
+			for(int i=0;i<velicinaNiza;i++) {
+				nizZaPrikaz[i] = izvorniNiz[i];
+			}
+			
+			if(sort==1) {
+				for(int i=0;i<velicinaNiza;i++) {
+					for(int j=i+1;j<velicinaNiza;j++) {
+						if(nizZaPrikaz[i]>nizZaPrikaz[j]) {
+							temp = nizZaPrikaz[i];
+							nizZaPrikaz[i] = nizZaPrikaz[j];
+							nizZaPrikaz[j] = temp;
+						}
+					}
+				}
+			}else if(sort==2){
+				for(int i=velicinaNiza-1;i>=0;i--) {
+					for(int j=i-1;j>=0;j--) {
+						if(nizZaPrikaz[i]>nizZaPrikaz[j]) {
+							temp = nizZaPrikaz[i];
+							nizZaPrikaz[i] = nizZaPrikaz[j];
+							nizZaPrikaz[j] = temp;
+						}
+					}
+				}
+			}
+			
+			System.out.print("Izvorni redoslijed: ");
+			System.out.println(Arrays.toString(izvorniNiz));
+			
+			if(sort==1) {
+				System.out.print("Vrijednosti sortirane uzlazno ");
+			}else if(sort==2) {
+				System.out.print("Vrijednosti sortirane silazno ");
+			}
+			System.out.println(Arrays.toString(nizZaPrikaz));
 			
 			
 	}
