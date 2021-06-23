@@ -2,42 +2,42 @@ package edunova;
 
 import javax.swing.JOptionPane;
 
-public class slaganjeSendvica {
+public class SlaganjeSendvica {
 
 	public static void main(String[] args) {
 		
 		// u nizu 'peciva' su definirane vrijednosti kruh, kifla, somun i kajzerica 
-		// u nizu 'namazi' su definirane vrijednosti margarin, mlijeèni namaz, majoneza, vrhnje i ketchup
-		// u nizu 'mesniProizvodi' su definirane vrijednosti parizer, tirolka, pašteta, šunka i kobasica
-		// u nizu 'prilozi' su definirane vrijednosti krastavac, rajèica, luk, paprika, salata i kupus
-		// korisnik prvo definira maksimalni broj slojeva sendvièa
-		// korisnik zatim slae svoj sendviè birajuæi kategorije proizvoda i same proizvode iz odabrane kategorije
-		// korisnik prekida slaganje sendvièa unosom vrijednosti 0, 
-		// iako nije došao do maksimalnog broja slojeva koji je na poèetku definirao
-		// slae se 'od dolje prema gore'
+		// u nizu 'namazi' su definirane vrijednosti margarin, mlijeÄni namaz, majoneza, vrhnje i ketchup
+		// u nizu 'mesniProizvodi' su definirane vrijednosti parizer, tirolka, paÅ¡teta, Å¡unka i kobasica
+		// u nizu 'prilozi' su definirane vrijednosti krastavac, rajÄica, luk, paprika, salata i kupus
+		// korisnik prvo definira maksimalni broj slojeva sendviÄa
+		// korisnik zatim slaÅ¾e svoj sendviÄ birajuÄ‡i kategorije proizvoda i same proizvode iz odabrane kategorije
+		// korisnik prekida slaganje sendviÄa unosom vrijednosti 0, 
+		// iako nije doÅ¡ao do maksimalnog broja slojeva koji je na poÄetku definirao
+		// slaÅ¾e se 'od dolje prema gore'
 		
 		String[] peciva = {"kruh", "kifla", "somun","kajzerica"};
-		String[] namazi = {"margarin", "mlijeèni namaz", "majoneza","vrhnje", "ketchup"};
-		String[] mesniProizvodi = {"parizer", "tirolka", "pašteta","šunka", "kobasica"};
-		String[] prilozi = {"krastavac", "rajèica", "luk","paprika", "salata", "kupus"};
+		String[] namazi = {"margarin", "mlijeÄni namaz", "majoneza","vrhnje", "ketchup"};
+		String[] mesniProizvodi = {"parizer", "tirolka", "paÅ¡teta","Å¡unka", "kobasica"};
+		String[] prilozi = {"krastavac", "rajÄica", "luk","paprika", "salata", "kupus"};
 		int porukaOdabiraProizovda, odabraniProizvod, brojOdabranihSlojeva=0, maxBrojSlojeva;
 		String listaProizvoda, slozeniSendvic;
 		
 		JOptionPane.showInternalMessageDialog(null, "Pozdrav!\n"
-				+ "Ja sam tvoj asistent za sendvièe.\n"
-				+ "Za poèetak slaganja sendvièa klikni 'OK'");
+				+ "Ja sam tvoj asistent za sendviÄe.\n"
+				+ "Za poÄetak slaganja sendviÄa klikni 'OK'");
 		
 		for(;;) {
 			
 			maxBrojSlojeva = Integer.parseInt(
-					JOptionPane.showInputDialog("Koji je najveæi broj slojeva koji planiraš za svoj iduæi sendviè?")
+					JOptionPane.showInputDialog("Koji je najveÄ‡i broj slojeva koji planiraÅ¡ za svoj iduÄ‡i sendviÄ?")
 					);
 			
 			if(maxBrojSlojeva>0) {
 				break;
 			}
 			
-			JOptionPane.showInternalMessageDialog(null, "Sendviè mora imati više od 0 slojeva");
+			JOptionPane.showInternalMessageDialog(null, "SendviÄ mora imati viÅ¡e od 0 slojeva");
 		}
 		
 		
@@ -45,10 +45,10 @@ public class slaganjeSendvica {
 		
 		JOptionPane.showInternalMessageDialog(null, "Super!\n"
 				+ "To bi bio i moj izbor.\n"
-				+ "Idemo sada izabrati što æe sve biti u tvom sendvièu!\n"
-				+ "Sendviè slaemo 'od dolje prema gore'\n"
-				+ "Slaganje sendvièa moeš prekinuti sa 0\n"
-				+ "Sa èime eliš poèeti?\n"
+				+ "Idemo sada izabrati Å¡to Ä‡e sve biti u tvom sendviÄu!\n"
+				+ "SendviÄ slaÅ¾emo 'od dolje prema gore'\n"
+				+ "Slaganje sendviÄa moÅ¾eÅ¡ prekinuti sa 0\n"
+				+ "Sa Äime Å¾eliÅ¡ poÄeti?\n"
 				+ "Za izbor sastojaka klikni 'OK'");
 		
 		
@@ -57,7 +57,7 @@ public class slaganjeSendvica {
 			
 			for(;;) {
 				porukaOdabiraProizovda = Integer.parseInt(JOptionPane.showInputDialog(
-						"Izaberi kategoriju proizvoda za ovaj sloj sendvièa\n\n"
+						"Izaberi kategoriju proizvoda za ovaj sloj sendviÄa\n\n"
 						+ "1 Pecivo\n"
 						+ "2 Namazi\n"
 						+ "3 Mesni proizvodi\n"
@@ -68,7 +68,7 @@ public class slaganjeSendvica {
 					break;
 				}
 				
-				JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuğenih vrijednosti");
+				JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuÄ‘enih vrijednosti");
 			}
 
 			if(porukaOdabiraProizovda==0) {
@@ -77,7 +77,7 @@ public class slaganjeSendvica {
 				
 			}else if(porukaOdabiraProizovda==1) {	
 				
-				listaProizvoda = "Koje pecivo eliš?\n\n";
+				listaProizvoda = "Koje pecivo Å¾eliÅ¡?\n\n";
 				for(int j=0;j<peciva.length;j++) {
 					listaProizvoda += (j+1) + " " + peciva[j] + "\n";					
 				}
@@ -98,12 +98,12 @@ public class slaganjeSendvica {
 						
 					}
 						
-					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuğenih vrijednosti");					
+					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuÄ‘enih vrijednosti");					
 				}				
 					
 			}else if(porukaOdabiraProizovda==2) {	
 				
-				listaProizvoda = "Koji namaz eliš?\n\n";
+				listaProizvoda = "Koji namaz Å¾eliÅ¡?\n\n";
 				for(int j=0;j<namazi.length;j++) {
 					listaProizvoda += (j+1) + " " + namazi[j] + "\n";					
 				}
@@ -123,12 +123,12 @@ public class slaganjeSendvica {
 						}
 					}
 						
-					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuğenih vrijednosti");					
+					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuÄ‘enih vrijednosti");					
 				}				
 					
 			}else if(porukaOdabiraProizovda==3) {
 				
-				listaProizvoda = "Koji mesni proizvod eliš?\n\n";
+				listaProizvoda = "Koji mesni proizvod Å¾eliÅ¡?\n\n";
 				for(int j=0;j<mesniProizvodi.length;j++) {
 					listaProizvoda += (j+1) + " " + mesniProizvodi[j] + "\n";					
 				}
@@ -148,12 +148,12 @@ public class slaganjeSendvica {
 						}
 					}
 						
-					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuğenih vrijednosti");					
+					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuÄ‘enih vrijednosti");					
 				}				
 					
 			}else if(porukaOdabiraProizovda==4) {	
 				
-				listaProizvoda = "Koji prilog eliš?\n\n";
+				listaProizvoda = "Koji prilog Å¾eliÅ¡?\n\n";
 				for(int j=0;j<prilozi.length;j++) {
 					listaProizvoda += (j+1) + " " + prilozi[j] + "\n";					
 				}
@@ -173,14 +173,14 @@ public class slaganjeSendvica {
 						}
 					}
 						
-					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuğenih vrijednosti");					
+					JOptionPane.showInternalMessageDialog(null, "Molim unesi neku od ponuÄ‘enih vrijednosti");					
 				}				
 					
 			}
 			
 			if(i<maxBrojSlojeva-1) {
 				JOptionPane.showInternalMessageDialog(null, "Super!\n\n"
-								+ (i+1) + ". sloj od moguæih " + maxBrojSlojeva + " je odabran.\n"
+								+ (i+1) + ". sloj od moguÄ‡ih " + maxBrojSlojeva + " je odabran.\n"
 								+ "Idemo dalje!\n"
 								+ "Za nastavak klikni 'OK'");
 			}
@@ -188,12 +188,12 @@ public class slaganjeSendvica {
 			
 		}
 		
-		slozeniSendvic = "Nema sendvièa. Nisi odabrao niti jedan sastojak.";
+		slozeniSendvic = "Nema sendviÄa. Nisi odabrao niti jedan sastojak.";
 		
 		for(int i=0;i<sendvic.length;i++) {
 			if(sendvic[i]!=null) {
 				brojOdabranihSlojeva++;
-				slozeniSendvic = "Tvoj sendviè je gotov i izgleda ovako:\n";				
+				slozeniSendvic = "Tvoj sendviÄ je gotov i izgleda ovako:\n";				
 			}
 		}
 		
