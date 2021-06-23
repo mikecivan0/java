@@ -2,9 +2,9 @@
 bin
 .classpath
 .project
-*zadatakIzFactorya.java
-*K01_Varijable.java
-*K2_PrimitivniTipovi.java
-*K03_Omotaci.java
-*K04_BrojevnaKruznica.java
-*K05_Operatori.java
+src/edunova/zadatakIzFactorya.java
+src/edunova/K01_Varijable.java
+src/edunova/K2_PrimitivniTipovi.java
+src/edunova/K03_Omotaci.java
+src/edunova/K04_BrojevnaKruznica.java
+src/edunova/K05_Operatori.java
